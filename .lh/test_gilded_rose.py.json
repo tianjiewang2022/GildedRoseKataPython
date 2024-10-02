@@ -1,0 +1,26 @@
+{
+    "sourceFile": "test_gilded_rose.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1727849958464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1727850119771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,10 @@\n         gr = GildedRose(items)\n \n         gr.update_quality()\n \n-        assert gr.get_items_by_name(vest) == [Item(\n-            vest, 0, 1), Item(vest, 8, 18), Item(vest, 3, 5)]\n+        self.assertEquals(0, items[0].sell_in)\n \n \n+\n if __name__ == '__main__':\n     unittest.main()\n"
+                },
+                {
+                    "date": 1727850142757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n         gr = GildedRose(items)\n \n         gr.update_quality()\n \n-        self.assertEquals(0, items[0].sell_in)\n+        self.assertEquals(1, items[0].sell_in)\n \n \n if __name__ == '__main__':\n     unittest.main()\n"
+                }
+            ],
+            "date": 1727849958464,
+            "name": "Commit-0",
+            "content": "# -*- coding: utf-8 -*-\nimport unittest\n\nfrom gilded_rose import Item, GildedRose\n\n\nclass GildedRoseTest(unittest.TestCase):\n    def test_foo(self):\n        items = [Item(\"foo\", 0, 0)]\n        gilded_rose = GildedRose(items)\n        gilded_rose.update_quality()\n        self.assertEquals(\"fixme\", items[0].name)\n\n    def test_vest_item_should_decrease_after_one_day(self):\n\n            vest = \"+5 Dexterity Vest\"\n            items = [Item(vest, 1, 2), Item(vest, 9, 19), Item(vest, 4, 6), ]\n            gr = GildedRose(items)\n\n            gr.update_quality()\n\n            assert gr.get_items_by_name(vest) == [Item(vest, 0, 1), Item(vest, 8, 18), Item(vest, 3, 5)]\n\n    \n\n\nif __name__ == '__main__':\n    unittest.main()\n"
+        }
+    ]
+}

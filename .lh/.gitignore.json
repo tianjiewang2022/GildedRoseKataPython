@@ -1,0 +1,18 @@
+{
+    "sourceFile": ".gitignore",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1726149076174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1726149076174,
+            "name": "Commit-0",
+            "content": "# Ignore Python compiled files\n*.pyc\n*.pyo\n__pycache__/\n\n# Ignore system files\n.DS_Store\nThumbs.db\n\n# Ignore environment files\n.env\n.vscode/\n.idea/\n"
+        }
+    ]
+}
