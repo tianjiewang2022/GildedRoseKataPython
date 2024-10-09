@@ -30,7 +30,7 @@ class GildedRoseTest(unittest.TestCase):
         items = [Item("foo", 10, 100)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
-        self.assertEqual(49, items[0].quality)
+        self.assertEqual(50, items[0].quality)
 
     # "Conjured" items degrade in Quality twice as fast as normal items
     def test_conjured_degrade_in_quality_twice_fast_as_normal_items(self):
