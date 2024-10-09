@@ -1,0 +1,30 @@
+{
+    "sourceFile": "gilded_rose.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1728426982700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1728427375839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,10 +39,9 @@\n                                 item.quality = item.quality + 1\n             if item.name != \"Sulfuras, Hand of Ragnaros\":\n                 item.sell_in = item.sell_in - 1\n             if item.sell_in < 0:\n-                if item.name != \"Aged Brie\":\n-                    if item.name != \"Backstage passes to a TAFKAL80ETC concert\":\n+                if item.name != \"Aged Brie\" and item.name != \"Backstage passes to a TAFKAL80ETC concert\":\n                         if item.quality > 0:\n                             if item.name != \"Sulfuras, Hand of Ragnaros\":\n                                 item.quality = item.quality - 1\n                     else:\n"
+                },
+                {
+                    "date": 1728427430671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,8 @@\n                 if item.name != \"Aged Brie\" and item.name != \"Backstage passes to a TAFKAL80ETC concert\":\n                     if item.quality > 0:\n                         if item.name != \"Sulfuras, Hand of Ragnaros\":\n                             item.quality = item.quality - 1\n-                    else:\n-                        item.quality = item.quality - item.quality\n+                 \n                 else:\n                     if item.quality < 50:\n                         item.quality = item.quality + 1\n"
+                },
+                {
+                    "date": 1728428230209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,10 @@\n                 if item.name != \"Aged Brie\" and item.name != \"Backstage passes to a TAFKAL80ETC concert\":\n                     if item.quality > 0:\n                         if item.name != \"Sulfuras, Hand of Ragnaros\":\n                             item.quality = item.quality - 1\n+                        if item.name == \"Conjured\":\n+                            item.quality = item.quality - 1\n                 else:\n                     item.quality = item.quality - item.quality\n                 else:\n                     if item.quality < 50:\n"
+                }
+            ],
+            "date": 1728426982700,
+            "name": "Commit-0",
+            "content": "# -*- coding: utf-8 -*-\n\n\nclass Item:\n    \"\"\" DO NOT CHANGE THIS CLASS!!!\"\"\"\n    def __init__(self, name, sell_in, quality):\n        self.name = name\n        self.sell_in = sell_in\n        self.quality = quality\n\n    def __repr__(self):\n        return \"%s, %s, %s\" % (self.name, self.sell_in, self.quality)\n\n\nclass GildedRose(object):\n\n    def __init__(self, items: list[Item]):\n        # DO NOT CHANGE THIS ATTRIBUTE!!!\n        self.items = items\n\n    def update_quality(self):\n        for item in self.items:\n            if item.name != \"Aged Brie\" and item.name != \"Backstage passes to a TAFKAL80ETC concert\":\n                if item.quality > 0:\n                    if item.name != \"Sulfuras, Hand of Ragnaros\":\n                        item.quality = item.quality - 1\n                    if item.name == \"Conjured\":\n                        item.quality = item.quality - 1\n            else:\n                if item.quality < 50:\n                    item.quality = item.quality + 1\n                    if item.name == \"Backstage passes to a TAFKAL80ETC concert\":\n                        if item.sell_in < 11:\n                            if item.quality < 50:\n                                item.quality = item.quality + 1\n                        if item.sell_in < 6:\n                            if item.quality < 50:\n                                item.quality = item.quality + 1\n            if item.name != \"Sulfuras, Hand of Ragnaros\":\n                item.sell_in = item.sell_in - 1\n            if item.sell_in < 0:\n                if item.name != \"Aged Brie\":\n                    if item.name != \"Backstage passes to a TAFKAL80ETC concert\":\n                        if item.quality > 0:\n                            if item.name != \"Sulfuras, Hand of Ragnaros\":\n                                item.quality = item.quality - 1\n                    else:\n                        item.quality = item.quality - item.quality\n                else:\n                    if item.quality < 50:\n                        item.quality = item.quality + 1\n"
+        }
+    ]
+}
